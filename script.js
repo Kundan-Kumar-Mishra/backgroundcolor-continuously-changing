@@ -14,10 +14,14 @@ function randomColor() {
 }
 
 start.addEventListener("click", function () {
-    intervelId = setInterval(randomColor, 1000);
+    if(!intervelId){
+        intervelId = setInterval(randomColor, 1000);
+    }
+       
 
 })
 
 stop.addEventListener("click",function() {
     clearInterval(intervelId);
+    intervelId = null;
 })
